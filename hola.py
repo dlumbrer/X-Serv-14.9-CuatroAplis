@@ -1,9 +1,8 @@
 #!/usr/bin/python
 
+import webapp
 
-#!/usr/bin/python
-
-class saludoApp:
+class saludoApp(webapp.app):
 	def parse(self, request, rest):
 	    recurso = request.split()[1][1:]
 	    #Recurso es o bien hola o bien adios

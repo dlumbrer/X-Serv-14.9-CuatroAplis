@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
-class sumaApp:
+import webapp
+
+class sumaApp(webapp.app):
 	def parse(self, request, rest):
 		paquete = rest.split('/')[1:]
 		# paquete es una lista con [num1, num2]

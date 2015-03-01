@@ -14,9 +14,6 @@ October 2009, February 2015
 """
 
 import socket
-import suma
-import hola
-import aleat
 
 class app:
     """Application to which webApp dispatches. Does the real work
@@ -100,39 +97,5 @@ class webApp:
                             + htmlAnswer + "\r\n")
             recvSocket.close()
                        
-                      	
-class githubApp(app):
-	
-	def parse(self, request, rest):
-		paquete = rest.split('/')[1:]
-		return paquete
-		
-	def process(self, parsedRequest):
-		if parsedRequest[0]:
-			if parsedRequest[0] == "code":
-				return ("200 OK", "<html><body><h1>CODE</h1>" + 
-						"<p><a href='https://github.com/dlumbrer/X-Serv-14.8-ServVariasApps'>Aqui tienes el codigo</a></p>" +
-						"</body></html>")
-			elif parsedRequest[0] == "who":
-				return ("200 OK", "<html><body><h1>Yo soy</h1>" + 
-						"<p><a href='https://github.com/dlumbrer/'>David Moreno Lumbreras</a></p>" +
-						"</body></html>")
-						
-		return ("200 OK", "<html><body><h1>UY</h1>" +
-				"<p><a href='http://localhost:1234/github/code'>Quieres ver el codigo?</a></p>" + 
-				"<p><a href='http://localhost:1234/github/who'>Quieres saber quien soy?</a></p></body></html>")                    
 
-if __name__ == "__main__":
-    anApp = app()
-    otherApp = app()
-    saludo = hola.saludoApp()
-    sumar = suma.sumaApp()
-    aleatorio = aleat.aleatApp()
-    github = githubApp()
-    testWebApp = webApp("localhost", 1234, {'/app': anApp,
-                                            '/other': otherApp,
-                                            '/hola': saludo,
-                                            '/adios': saludo,
-                                            '/suma': sumar,
-                                            '/aleat': aleatorio,
-                                            '/github': github})
+

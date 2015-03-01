@@ -2,10 +2,9 @@
 
 
 import random
+import webapp
 
-class aleatApp:
-	def parse(self, request, rest):
-		return None
+class aleatApp(webapp.app):
 		
 	def process(self, parsedRequest):
 		return ("200 OK", "<html><body><h1>ALEATORIO</h1><p><a href='/aleat/"+
